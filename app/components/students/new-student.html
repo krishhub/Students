@@ -1,0 +1,29 @@
+
+<h1> Student Form</h1>
+<hr>
+<div class="col-md-12">
+    {{me}}
+    <form ng-submit="submit()">
+
+        <h1>Students</h1>
+        <div class="form-group">
+
+            <label for="studentId"></label>
+            <input class="form-control" type="text" id="studentId"
+                   placeholder="StudentId" ng-model="student.id">
+            <label for="studentName"></label>
+            <input class="form-control" type="text" id="studentName"
+                   placeholder="Student Name" ng-model="student.name">
+            <label for="school"></label>
+            <input class="form-control" type="text" id="school"
+                   placeholder="School" ng-model="student.school">
+            <label for="city"></label>
+            <input class="form-control" type="text" id="city"
+                   placeholder="City" ng-model="student.city">
+            <br>
+            <button class="btn btn-default" ng-click="addStudent(student)">Add</button>
+
+        </div>
+
+    </form>
+    </div>

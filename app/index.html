@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="studentapp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-12" ui-view></div>
+
+    </div>
+
+</div>
+
+
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-ui-router.min.js"></script>
+<script src="lib/loadash-4.15.0.js"></script>
+<script src="lib/angular-resource.min.js"></script>
+<!--<script src="lib/angular-route.min.js"></script>-->
+<script src="app.js"></script>
+<script src="components/students/new-student.ctrl.js"></script>
+<!--<script src="view/new-student.ctrl.js"></script>-->
+<script src="components/students/student.resource.js"></script>
+<script src="components/students/student.service.js"></script>
+<script src="components/students/all-students.controller.js"></script>
+<script src="components/students/view-student.ctrl.js"></script>
+<script src="components/students/edit-student.ctrl.js"></script>
+</body>
+</html>

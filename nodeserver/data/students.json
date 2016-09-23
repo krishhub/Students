@@ -1,0 +1,32 @@
+[
+  {
+    "id": "001",
+    "name": "Veer",
+    "school":"Ann Mary",
+    "city":"Dehradun"
+  },
+  {
+    "id": "002",
+    "name": "Shivam",
+    "school":"Ann Mary",
+    "city":"Dehradun"
+  },
+  {
+    "id": "003",
+    "name": "Sidhhant",
+    "school":"Ann Mary",
+    "city":"Dehradun"
+  },
+  {
+  "id": "004",
+  "name": "Misri",
+  "school":"Jamnabai Narsi",
+  "city":"Ahmedabad"
+},
+  {
+    "id": "005",
+    "name": "Misthoo",
+    "school":"Jamnabai Narsi",
+    "city":"Ahmedabad"
+  }
+]
