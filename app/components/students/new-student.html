@@ -2,9 +2,9 @@
 <h1> Student Form</h1>
 <hr>
 <div class="col-md-12">
-    <form ng-submit="submit()">
+    <form ng-submit="submit()" novalidate>
         <h1>Students</h1>
-        <div class="form-group">
+        <div class="form-group" >
             <label for="studentId"></label>
             <input class="form-control" type="text" id="studentId"
                    placeholder="StudentId" ng-model="student.id">
@@ -15,8 +15,9 @@
             <input class="form-control" type="text" id="school"
                    placeholder="School" ng-model="student.school">
             <label for="city"></label>
-            <input class="form-control" type="text" id="city"
-                   placeholder="City" ng-model="student.city">
+            <div ng-controller="CityTypeaheadCtrl">
+            <input class="form-control" ng-model="student.city" type="text" id="city"
+                   uib-typeahead="city for city in cities | filter:$viewValue | limitTo:5"  ></div>
             <br>
             <button class="btn btn-default" ng-click="saveOrUpdateStudent(student)">Add</button>
 

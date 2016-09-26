@@ -9,6 +9,7 @@ app.controller('StudentController', ['$rootScope',
             $scope.workingNow = "Going good";
             $scope.selectedStudent = {};
 
+            $scope.animationsEnabled = true;
             console.log("from The scope" + $scope.workingNow);
 
             $scope.students = students;
