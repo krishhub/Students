@@ -4,7 +4,7 @@
     <tbody>
     <tr><th>Student Id</th><th>Student Name</th><th>School</th><th>City</th><th></th><th></th></tr>
     <tr ng-repeat="student in students | filter:selection:strict" ><td ><span><a ui-sref="view({sid:student.id})" >{{student.id}}</a> </span></td><td>{{student.name}}</td><td>{{student.school}}</td><td>{{student.city}}</td><td> &nbsp;
-        <span class="glyphicon glyphicon-remove" ng-click="removeStudent(student)"></span></td><td><span class="glyphicon glyphicon-edit" ng-click="open('lg',{sid:student.id})"></span></td></tr>
+        <span class="glyphicon glyphicon-remove" ng-click="removeStudent(student)"></span></td><td><span class="glyphicon glyphicon-edit" ng-click="open('lg',student.id)"></span></td></tr>
     </tbody>
 </table>
 

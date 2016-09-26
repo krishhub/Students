@@ -22,12 +22,12 @@ angular.module('studentapp').service('StudentService', ['StudentResource', funct
         };
 
         this.getStudent = function (sid) {
-            console.log(students);
+
             var s = _.find(students,{id:sid});
-            // if(!s){
-            //     s = StudentResource.get({id:sid});
-            // }
-            return StudentResource.get({id:sid});
+            if(!s){
+                s = StudentResource.get({id:sid});
+            }
+            return s;
         };
 
         this.saveOrUpdateStudent = function (student) {

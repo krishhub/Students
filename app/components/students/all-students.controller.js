@@ -29,10 +29,9 @@ app.controller('StudentController', ['$rootScope',
                     }
 
                 });
-
                 console.log('modal opned!');
-                modalInstance.result.then(function (student) {
-                    $scope.student = student;
+                modalInstance.result.then(function () {
+
                 });
 
             };
@@ -47,10 +46,15 @@ app.controller('StudentController', ['$rootScope',
 );
 
 
-app.controller('ModalInstanceCtrl',function ($scope, $uibModalInstance,student) {
+app.controller('ModalInstanceCtrl',function ($scope, $uibModalInstance,student,StudentService) {
     console.log('modal instance!');
     $scope.student = student;
-    console.log(student);
+
+    $scope.saveChanges =  function(student){
+        StudentService.saveOrUpdateStudent(student);
+        $uibModalInstance.close();
+    }
+
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };

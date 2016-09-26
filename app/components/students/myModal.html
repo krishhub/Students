@@ -9,6 +9,7 @@
     <input type="text" ng-model="student.city" placeholder={{student.city}}>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="saveOrUpdateStudent(student)">Save</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="cancel()">Cancel</button>
+    <button type="button" class="btn btn-default" ng-click="saveChanges(student)">Save</button>
 </div>
 

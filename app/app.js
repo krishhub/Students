@@ -39,17 +39,18 @@ app.config(['$stateProvider', '$urlRouterProvider',function ($stateProvider, $ur
                 }]
             }
         })
-        .state('edit',{
-            url:'/editdetails/:sid',
-            controller:'myModalController',
-            templateUrl:'components/students/myModal.html',
-             resolve: {
-                 student: ['$stateParams','StudentService', function($stateParams, StudentService){
-
-                     return StudentService.getStudent($stateParams.sid);
-                 }]
-             }
-        });
+        // .state('edit',{
+        //     url:'/editdetails/:sid',
+        //     controller:'myModalController',
+        //     templateUrl:'components/students/myModal.html',
+        //      resolve: {
+        //          student: ['$stateParams','StudentService', function($stateParams, StudentService){
+        //
+        //              return StudentService.getStudent($stateParams.sid);
+        //          }]
+        //      }
+        // }
+        // );
 
     $urlRouterProvider.otherwise("/students");
 

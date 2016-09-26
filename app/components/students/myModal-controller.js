@@ -4,7 +4,7 @@
 
 app.controller('myModalController', [
     '$scope','$state', '$uibModal', 'student',
-    function ($scope, $state,$uibModal, student) {
+    function ($scope, $state, $uibModal, student) {
 
     $scope.student = student;
 
