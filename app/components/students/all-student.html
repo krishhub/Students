@@ -1,9 +1,10 @@
+
 <div>
 <table border="3">
     <tbody>
     <tr><th>Student Id</th><th>Student Name</th><th>School</th><th>City</th><th></th><th></th></tr>
     <tr ng-repeat="student in students | filter:selection:strict" ><td ><span><a ui-sref="view({sid:student.id})" >{{student.id}}</a> </span></td><td>{{student.name}}</td><td>{{student.school}}</td><td>{{student.city}}</td><td> &nbsp;
-        <span class="glyphicon glyphicon-remove" ng-click="removeStudent(student)"></span></td><td><a data-toggle="modal" data-target="#myModal" class="glyphicon glyphicon-edit" ui-sref="edit({sid:student.id})"></a></td></tr>
+        <span class="glyphicon glyphicon-remove" ng-click="removeStudent(student)"></span></td><td><span class="glyphicon glyphicon-edit" ng-click="open('lg',{sid:student.id})"></span></td></tr>
     </tbody>
 </table>
 
@@ -18,27 +19,5 @@
 <a class="btn-link" ui-sref="students.new">New Student</a>
 <div class="col-md-12" ui-view="newstudent"></div>
 
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Change Student Details</h4>
-            </div>
-            <div class="modal-body">
-                <label>Student Id:</label><label>{{currentstudent.id}}</label><br>
-                <input type ="text" ng-model="currentstudent.name" placeholder={{currentstudent.name}}><br>
-                <input type ="text" ng-model="currentstudent.school" placeholder={{currentstudent.school}}><br>
-                <input type="text" ng-model="currentstudent.city" placeholder={{currentstudent.city}}>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="saveEditedStudent(currentstudent)">Save</button>
-            </div>
-        </div>
-
-    </div>
-</div>
 
 </div> <!--//modal parent div-->

@@ -2,12 +2,9 @@
 <h1> Student Form</h1>
 <hr>
 <div class="col-md-12">
-    {{me}}
     <form ng-submit="submit()">
-
         <h1>Students</h1>
         <div class="form-group">
-
             <label for="studentId"></label>
             <input class="form-control" type="text" id="studentId"
                    placeholder="StudentId" ng-model="student.id">
@@ -21,7 +18,7 @@
             <input class="form-control" type="text" id="city"
                    placeholder="City" ng-model="student.city">
             <br>
-            <button class="btn btn-default" ng-click="addStudent(student)">Add</button>
+            <button class="btn btn-default" ng-click="saveOrUpdateStudent(student)">Add</button>
 
         </div>
 

@@ -30,13 +30,13 @@
                     <h4 class="modal-title">Change Student Details</h4>
                 </div>
                 <div class="modal-body">
-                    <label>Student Id:</label><label>{{currentstudent.id}}</label><br>
-                    <input type ="text" ng-model="currentstudent.name" placeholder={{currentstudent.name}}><br>
-                    <input type ="text" ng-model="currentstudent.school" placeholder={{currentstudent.school}}><br>
-                    <input type="text" ng-model="currentstudent.city" placeholder={{currentstudent.city}}>
+                    <label>Student Id:</label><label>{{student.id}}</label><br>
+                    <input type ="text" ng-model="student.name" placeholder={{student.name}}><br>
+                    <input type ="text" ng-model="student.school" placeholder={{student.school}}><br>
+                    <input type="text" ng-model="student.city" placeholder={{student.city}}>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="updateStudent(currentstudent)">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="saveOrUpdateStudent(student)">Save</button>
                 </div>
             </div>
 

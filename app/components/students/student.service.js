@@ -24,20 +24,15 @@ angular.module('studentapp').service('StudentService', ['StudentResource', funct
         this.getStudent = function (sid) {
             console.log(students);
             var s = _.find(students,{id:sid});
-            if(!s){
-                s = StudentResource.get({id:sid});
-            }
-            return s;
+            // if(!s){
+            //     s = StudentResource.get({id:sid});
+            // }
+            return StudentResource.get({id:sid});
         };
 
-        this.addStudent = function (student) {
+        this.saveOrUpdateStudent = function (student) {
 
-            var promise = StudentResource.save({
-                'id':student.id,
-                'name':student.name,
-                'school':student.school,
-                'city':student.city
-            });
+            var promise = StudentResource.save(student);
 
             //When "this" is used within a function, it is better to assign "this" to a variable and then use the variable to refer to this
             promise.$promise.then(function(){
@@ -53,15 +48,6 @@ angular.module('studentapp').service('StudentService', ['StudentResource', funct
             return promise;
         };
 
-        this.updateStudent = function (currentstudent) {
-            return StudentResource.save({
-                'id':currentstudent.id,
-                'name':currentstudent.name,
-                'school':currentstudent.school,
-                'city':currentstudent.city
-                }
-            ).$promise;
-        };
 
     //     this.addTodo = function (todo) {
     //

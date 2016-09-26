@@ -1,12 +1,11 @@
 /**
  * Created by kmeet on 16/08/16.
  */
-app.controller('ViewStudentCtrl', ['$rootScope','$stateParams',
-    '$scope','StudentService',
-    function ($rootScope,$stateParams, $scope, StudentService) {
+app.controller('ViewStudentCtrl', ['$rootScope',
+    '$scope', 'student',
+    function ($rootScope, $scope, student) {
         $scope.kk ='krishna';
-
-        $scope.student = StudentService.getStudent($stateParams.sid)
+        $scope.student = student;
         console.log($scope.student);
     }])
 

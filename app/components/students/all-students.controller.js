@@ -1,12 +1,9 @@
 /**
  * Created by kmeet on 17/09/16.
  */
-/**
- * Created by kmeet on 17/09/16.
- */
 app.controller('StudentController', ['$rootScope',
-        '$scope', 'StudentService',
-        function ($rootScope, $scope, StudentService) {
+        '$scope','$uibModal', 'StudentService', 'students',
+        function ($rootScope,$scope,$uibModal, StudentService, students) {
 
             $scope.selection = {};
             $scope.workingNow = "Going good";
@@ -14,14 +11,50 @@ app.controller('StudentController', ['$rootScope',
 
             console.log("from The scope" + $scope.workingNow);
 
-            $scope.students = StudentService.getStudents();
-
+            $scope.students = students;
             $scope.removeStudent = StudentService.removeStudent;
+
+            $scope.open = function (size,sid) {
+
+
+                var modalInstance = $uibModal.open({
+                    animation: $scope.animationsEnabled,
+                    templateUrl: 'components/students/myModal.html',
+                    controller: 'ModalInstanceCtrl',
+                    size: size,
+                    resolve: {
+                        student: ['$stateParams','StudentService', function($stateParams, StudentService){
+                            return StudentService.getStudent(sid);
+                        }]
+                    }
+
+                });
+
+                console.log('modal opned!');
+                modalInstance.result.then(function (student) {
+                    $scope.student = student;
+                });
+
+            };
+
+
+            $scope.toggleAnimation = function () {
+                $scope.animationsEnabled = !$scope.animationsEnabled;
+            };
 
         }
     ]
 );
 
+
+app.controller('ModalInstanceCtrl',function ($scope, $uibModalInstance,student) {
+    console.log('modal instance!');
+    $scope.student = student;
+    console.log(student);
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+});
 
 //            var getTodos = function(){ TodoService.getTodos().then(function (todoList) {
 //                console.log(todoList[0].title);
