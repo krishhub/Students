@@ -8,6 +8,11 @@ app.controller('StudentFormCtrl', ['$rootScope',
 
         $scope.saveOrUpdateStudent = StudentService.saveOrUpdateStudent;
 
+        // $scope.openToast = function($event) {
+        //     $mdToast.show($mdToast.simple().textContent('New student details saved successfully!'));
+        //     // Could also do $mdToast.showSimple('Hello');
+        // };
+
 }]);
 
 app.controller('CityTypeaheadCtrl',function ($scope,$http) {

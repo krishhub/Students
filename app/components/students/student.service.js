@@ -1,7 +1,7 @@
 /**
  * Created by kmeet on 17/09/16.
  */
-angular.module('studentapp').service('StudentService', ['StudentResource', function (StudentResource) {
+angular.module('studentapp').service('StudentService', ['StudentResource','$mdToast', function (StudentResource,$mdToast) {
 
         var students = [];
         var self = this;
@@ -36,9 +36,11 @@ angular.module('studentapp').service('StudentService', ['StudentResource', funct
 
             //When "this" is used within a function, it is better to assign "this" to a variable and then use the variable to refer to this
             promise.$promise.then(function(){
+                $mdToast.show($mdToast.simple().textContent('New student details saved successfully!'));
                 self.getStudents();
             })
         };
+
 
         this.removeStudent = function (student) {
             var promise = StudentResource.remove(student);

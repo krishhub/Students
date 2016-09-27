@@ -1,7 +1,8 @@
 /**
  * Created by kmeet on 14/08/16.
  */
-var app = angular.module('studentapp',['ngResource','ui.router','ui.bootstrap']);
+var app = angular.module('studentapp',['ngResource','ui.router','ui.bootstrap','ngAnimate',
+    'ngSanitize','ngMaterial']);
 
 app.config(['$stateProvider', '$urlRouterProvider',function ($stateProvider, $urlRouterProvider) {
     $stateProvider.state('students',{
@@ -39,21 +40,17 @@ app.config(['$stateProvider', '$urlRouterProvider',function ($stateProvider, $ur
                 }]
             }
         })
-        // .state('edit',{
-        //     url:'/editdetails/:sid',
-        //     controller:'myModalController',
-        //     templateUrl:'components/students/myModal.html',
-        //      resolve: {
-        //          student: ['$stateParams','StudentService', function($stateParams, StudentService){
-        //
-        //              return StudentService.getStudent($stateParams.sid);
-        //          }]
-        //      }
-        // }
-        // );
+
+    app.config(['ngToastProvider',
+        function(ngToastProvider) {
+            ngToastProvider.configure({
+                additionalClasses: 'my-animation'
+            });
+        }
+    ]);
 
     $urlRouterProvider.otherwise("/students");
 
 
-       // $urlRouterProvider.otherwise('/');
+
 }]);
