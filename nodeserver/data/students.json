@@ -3,30 +3,35 @@
     "id": "001",
     "name": "Veer",
     "school":"Ann Mary",
-    "city":"Dehradun"
+    "city":"Dehradun",
+    "dob":"2006-09-13"
   },
   {
     "id": "002",
     "name": "Shivam",
     "school":"Ann Mary",
-    "city":"Dehradun"
+    "city":"Dehradun",
+    "dob":"2001-10-21"
   },
   {
     "id": "003",
     "name": "Sidhhant",
     "school":"Ann Mary",
-    "city":"Dehradun"
+    "city":"Dehradun",
+    "dob":"2006-04-21"
   },
   {
   "id": "004",
   "name": "Misri",
   "school":"Jamnabai Narsi",
-  "city":"Ahmedabad"
+  "city":"Ahmedabad",
+    "dob":"2016-02-10"
 },
   {
     "id": "005",
     "name": "Misthoo",
     "school":"Jamnabai Narsi",
-    "city":"Ahmedabad"
+    "city":"Ahmedabad",
+    "dob":"2010-11-10"
   }
 ]

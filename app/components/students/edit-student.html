@@ -33,7 +33,8 @@
                     <label>Student Id:</label><label>{{student.id}}</label><br>
                     <input type ="text" ng-model="student.name" placeholder={{student.name}}><br>
                     <input type ="text" ng-model="student.school" placeholder={{student.school}}><br>
-                    <input type="text" ng-model="student.city" placeholder={{student.city}}>
+                    <input autocomplete="off" type="text" uib-typeahead="city for city in cities | filter:$viewValue | limitTo:5" ng-model="student.city" placeholder={{student.city}}>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="saveOrUpdateStudent(student)">Save</button>

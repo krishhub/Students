@@ -1,0 +1,48 @@
+/*div{*/
+/*border: 1px solid black;*/
+/*}*/
+
+.headfoot{
+    background-color: darkcyan;
+    height: 10vh;
+}
+
+.center {
+    display: block;
+    text-align: center;
+}
+
+.main{
+    font-weight: lighter;
+    background-color: lightcyan;
+    font-size: 24px;
+    /*height: 85vh;*/
+}
+
+.h100{
+    height: 100px;
+}
+
+.mt100{
+    margin-top: 100px;
+}
+
+.mt20{
+    margin-top: 20px;
+}
+
+.font4{
+    margin-top: 20px !important;
+    color: darkcyan;
+    font-weight: 900;
+    font-size: small;
+    cursor: pointer;
+}
+
+.cursor{
+ cursor: pointer;
+}
+
+.h85{
+    height: 25vh;
+}

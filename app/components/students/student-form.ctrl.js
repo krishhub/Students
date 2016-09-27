@@ -13,6 +13,7 @@ app.controller('StudentFormCtrl', ['$rootScope',
         //     // Could also do $mdToast.showSimple('Hello');
         // };
 
+        $scope.student.dob = new Date();
 }]);
 
 app.controller('CityTypeaheadCtrl',function ($scope,$http) {

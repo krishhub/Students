@@ -4,7 +4,7 @@
 var app = angular.module('studentapp',['ngResource','ui.router','ui.bootstrap','ngAnimate',
     'ngSanitize','ngMaterial']);
 
-app.config(['$stateProvider', '$urlRouterProvider',function ($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider', '$urlRouterProvider','$mdDateLocaleProvider',function ($stateProvider, $urlRouterProvider,$mdDateLocaleProvider) {
     $stateProvider.state('students',{
         url:'/students',
         templateUrl:'components/students/all-student.html',
@@ -51,6 +51,9 @@ app.config(['$stateProvider', '$urlRouterProvider',function ($stateProvider, $ur
 
     $urlRouterProvider.otherwise("/students");
 
+    $mdDateLocaleProvider.formatDate = function(date) {
+        return moment(date).format('YYYY-MM-DD');
+    };
 
 
 }]);

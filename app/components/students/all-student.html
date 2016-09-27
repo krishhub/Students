@@ -1,9 +1,9 @@
+<div class=" col-lg-12 ">
 
-<div>
-<table border="3">
+<table class=" main table table-hover h100" style= "border: 1px solid darkcyan;">
     <tbody>
-    <tr><th>Student Id</th><th>Student Name</th><th>School</th><th>City</th><th></th><th></th></tr>
-    <tr ng-repeat="student in students | filter:selection:strict" ><td ><span><a ui-sref="view({sid:student.id})" >{{student.id}}</a> </span></td><td>{{student.name}}</td><td>{{student.school}}</td><td>{{student.city}}</td><td> &nbsp;
+    <tr><th>Student Id</th><th>Student Name</th><th>School</th><th>City</th><th>DOB</th><th></th><th></th></tr>
+    <tr ng-repeat="student in students | filter:selection:strict" ><td ><span><a ui-sref="view({sid:student.id})" >{{student.id}}</a> </span></td><td>{{student.name}}</td><td>{{student.school}}</td><td>{{student.city}}</td><td>{{student.dob}}</td><td> &nbsp;
         <span class="glyphicon glyphicon-remove" ng-click="removeStudent(student)"></span></td><td><span class="glyphicon glyphicon-edit" ng-click="open('lg',student.id)"></span></td></tr>
     </tbody>
 </table>
@@ -15,8 +15,9 @@
 <button class="btn-link" ng-click="selection.city ='Dehradun'" >Dehradun</button>
 &nbsp;
 <button class="btn-link" ng-click="selection.city='Ahmedabad'" >Ahmedabad</button>
+<a class="btn btn-link" ui-sref="students.new"> <span class="glyphicon glyphicon-plus-sign font10">  </span></a>
 
-<a class="btn-link" ui-sref="students.new">New Student</a>
+
 <div class="col-md-12" ui-view="newstudent"></div>
 
 

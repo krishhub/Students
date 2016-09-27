@@ -24,7 +24,7 @@
     background-image: url('../images/Aerial07.jpg');
     background-position: bottom center;
     background-size: cover;
-    height: 300px;
+    height: 100px;
 }
 .icon{
     max-width: 150px;
@@ -66,4 +66,7 @@ a.active{
     -webkit-animation: flipOutY 1s;
     -moz-animation: flipOutY 1s;
     animation: flipOutY 1s;
+}
+.md-toast-success {
+    background-color: green;
 }

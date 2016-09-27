@@ -36,7 +36,12 @@ angular.module('studentapp').service('StudentService', ['StudentResource','$mdTo
 
             //When "this" is used within a function, it is better to assign "this" to a variable and then use the variable to refer to this
             promise.$promise.then(function(){
-                $mdToast.show($mdToast.simple().textContent('New student details saved successfully!'));
+                $mdToast.show({
+                    template: '<md-toast class="md-toast-success"><span class="md-toast-text" flex> Saved successfully!</span>&nbsp; </md-toast>',
+                    hideDelay: 3000,
+                    position: 'top right',
+                    toastClass:'md-toast-success'
+                });
                 self.getStudents();
             })
         };
